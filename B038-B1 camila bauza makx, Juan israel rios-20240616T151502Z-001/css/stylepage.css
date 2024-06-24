@@ -1,0 +1,829 @@
+/* Mobile first */
+
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #D6D7D7;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; /*agregue esto*/
+}
+
+/*----------------------- Tamaño de las imagenes------------------ */
+img {
+    border-radius: 50%;
+    width: 150px;
+    height: 150px;
+}
+
+/* -------------------------- Grid al contenedor ------------------*/
+
+.contenedor{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+/* ---------------------------------------------------------------- Header --------------------------------------------------------------------- */
+header {
+    grid-area: header;
+    background-color: #010B17;
+    padding-top: 16px;
+    border: solid #51E422;
+}
+
+.titanium {
+    display: flex;
+    justify-content: center;
+}
+
+.titanium img {
+    border-radius: 0;
+    width: 80%;
+    height: auto;
+}
+
+/* ---------------------- Navegación ---------------------*/
+nav {
+    background-color: #010B17;
+}
+
+.btn_menu {
+    padding: 10px;
+    color: #51E422;
+}
+
+.btn_menu a {
+    text-decoration: none;
+}
+
+.menu {
+    margin-top: 8px;
+    border-block: 2px solid gray;
+    display: flex;
+    background-color: #010B17;
+}
+
+ul.botonera {
+    margin: 0;
+    padding: 0;
+    display: none;
+    flex-direction: column;
+}
+
+ul.botonera.mostrar {
+    display: flex;
+}
+
+ul.botonera li {
+    list-style: none;
+    margin: 0;
+    padding: 15px 20px;
+}
+
+ul.botonera li a {
+    text-decoration: none;
+    color: #51E422;
+}
+
+.menu .botonera li:hover {
+    background-color: #D6D7D7;
+}
+
+/* ------------------------------------------------------- Main couches y disciplinas -----------------------------------------------------------*/
+
+.main-index {
+    grid-area: main;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+    ".contenedorfotos"
+    ".frase"
+    ".fotos-gym"
+    ".nosotros";
+}
+
+.contenedorfotos{
+    grid-area: contenedorfotos ;
+}
+
+.contenedorfotos p {
+    padding: 8px;
+    border: 5px solid  #51E422;
+    background-color: #010B17;
+    color:  #51E422;
+    text-align: center;
+    font-size: 24px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.main-index .contenedorfotos figure {
+    padding-block: 10px;
+}
+
+.main-index .contenedorfotos figcaption {
+    border-radius: 16px;
+    text-align: center;
+    padding-block: 5px;
+}
+
+.main-index .contenedorfotos figcaption:hover {
+    background-color:#D6D7D7;
+}
+
+.main-index .contenedorfotos figcaption a {
+    color: green;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.couches1, .couches2, .couches3, .couches4 {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.couches1, .couches3 {
+    border: solid #010B17;
+    background-color: #4CAF50;
+}
+
+.couches2, .couches4 {
+    border: solid #4CAF50;
+    background-color: #010B17;
+}
+
+.couches1 figcaption, .couches3 figcaption {
+    background-color: #010B17;
+}
+
+.couches2 figcaption, .couches4 figcaption {
+    background-color: #4CAF50;
+}
+
+/* --------------------------------------------------------------- Aside frase ----------------------------------------------------------------- */
+aside {
+    grid-area: frase; 
+    background-color: #021020;
+    margin: 8px; /*agregue*/
+    padding-block: 16px;
+}
+ 
+.frase h4 {
+    text-align: center;
+    font-size: 24px;
+    color: #51E422;
+}
+ 
+/*-------------------------------------------------------Section para las fotos y el cartel----------------------------------------------------- */
+.fotos-gym {
+    width: 100%;
+    grid-area: fotos-gym;
+    position: relative;
+    display: flex;
+}
+
+.fotos-gym img {
+    height: auto;
+    border-radius: 0%;
+    width: 100%;
+}
+
+body .cartel {
+    position: absolute;
+    top: 49%;
+    left: 51%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    background-color: #010B17 ;
+    color: #51E422;
+    font-size: 16px;
+    text-align: center;
+    z-index: 1; 
+}
+
+/* ------------------------------------------------------------Section nosotros ----------------------------------------------------------------*/
+.nosotros {
+    grid-area: nosotros;
+    padding: 16px;
+    color: #010B17;
+}
+
+.nosotros h1, .nosotros h3 {
+    padding: 16px;
+}
+
+/* -------------------------------------------------------------------Footer --------------------------------------------------------------------*/
+footer {
+    grid-area: footer;
+    display: flex;
+    background-color: #010B17;
+    display: flex;
+    justify-content: space-around;
+    color: #51E422; 
+}
+
+footer img {
+    width: 50px;
+    height: 50px;
+}
+
+/*-------------------------------------------------------------HTML Horarios y descuentos-------------------------------------------------------*/
+
+.nuestrosHorarios{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+    "horarios"
+    "tablaDinamica"
+    "descuentos"    
+    ;
+}
+
+.nuestrosHorarios h1 {
+    margin: 8px;
+    padding: 8px;
+    border: 5px solid  #51E422;
+    background-color: #010B17;
+    color:  #51E422;
+    text-align: center;
+    font-size: 16px;
+    font-style: oblique;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-transform: uppercase;
+}
+
+.nuestrosHorarios h2 {
+    margin: 8px;
+    color: #010B17;
+    text-align: left;
+    font-size: 12px;
+}
+
+.horarios {
+    grid-area: horarios;
+    display: flex;
+    flex-direction: column;
+    width: 100%; 
+    max-width: 1000px;
+}
+
+table{
+    width: 100%; 
+    background-color: #010B17;
+    color: #4CAF50;
+    font-size: 12px;
+    border-collapse: collapse;
+    margin: 0;
+    padding: 0;
+    overflow-x: auto;
+}
+
+thead th {
+    color: #D6D7D7;
+    padding: 10px;
+}
+
+tbody td {
+    border: 1px solid #4CAF50;
+    padding: 8px;
+    text-align: center;
+}
+
+.tablaDinamica{
+    grid-area: tablaDinamica;
+    display: flex;
+    flex-direction: column;
+}
+
+#contenedor-formAct{
+    margin: 8px;
+    padding: 24px;
+    border: 2px solid #4CAF50;
+    background-color: #010B17;
+}
+
+
+#formActividad label, input{
+    margin-block: 10px;
+    padding: 8px;
+    color: #4CAF50;
+}
+
+#formActividad input{
+    color: #010B17;
+    margin: 5px;
+    padding: 5px;
+}
+
+#contenedor-formAct .botones-tabla{
+    display: inline;
+    justify-content: space-around;
+    margin: 16px;
+}
+
+#contenedor-formAct .botones-tabla button{
+    margin: 16px;
+    padding: 8px;
+    background-color: #4CAF50;
+    color: #D6D7D7;
+}
+
+.editar-btn, .eliminar-btn{
+    background-color: #4CAF50;
+    color: #D6D7D7;
+}
+
+.nuestrosHorarios .descuentos {
+   grid-area: descuentos;    
+   display: flex;
+   flex-direction: column;
+}
+
+.nuestrosHorarios .descuentos .mediosPago, .gruposDescuento{  
+    display: inline;
+    border: dashed black ;
+    margin-block: 16px;
+    padding-inline: 8px;
+}
+
+.descuentos h1 {
+    margin-block: 16px;
+    text-align: center; 
+    font-size: 12px;
+}
+
+.descuentos ul li {
+    padding-block: 8px;
+    list-style: disc;
+    color: #010B17;
+}
+
+.descuentos .mediosPago #destacado, .gruposDescuento #destacado{
+    background-color:#4CAF50;
+    font-weight: bold;
+}
+
+/*----------------------------------------------------------HTML Salud---------------------------------------------------------------*/
+
+
+.salud .saludBeneficios h1, h2{
+    margin: 16px;
+    font-size: 16px;
+}
+
+.salud .saludBeneficios h1{
+    background-color: #010B17;
+    padding: 8px;
+    color: #4CAF50;
+    text-align: center;
+}
+
+.salud .saludBeneficios h2{
+    color: #010B17;
+    text-align: left;
+}
+
+.salud .saludBeneficios ol li{
+    font-weight: bold;
+    font-style: oblique;
+    margin: 5px;
+}
+
+.especialistas h1{
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin: 16px;
+    padding: 8px;
+    background-color: #010B17;
+    color: #4CAF50;
+}
+
+.especialistas .medicos figure{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.medicos figure img{
+    margin-block: 16px;
+}
+
+.medicos figure figcaption{
+    margin-block: 16px;
+}
+
+.medicos figure figcaption a{
+    text-decoration: none;
+    padding: 12px;
+    background-color: #4CAF50;
+}
+
+.medicos figure figcaption:hover{
+    background-color: #D6D7D7;
+}
+
+/*--------------------------------------------------------------HTML contacto--------------------------------------------------------------------*/
+
+.formulario {
+    padding: 20px;
+    margin: 20px auto;
+    width: 80%;
+    border-radius: 5px;
+}
+
+.formulario h1 {
+    font-size: 16px;
+    text-align: center;
+    color: #51E422;
+    margin-bottom: 24px;
+}
+
+.formulario p {
+    color: #4CAF50;
+    margin-bottom: 24px;
+}
+
+.formulario label {
+    display: block; 
+    margin-bottom: 20px;
+    color: white;
+}
+
+.formulario input #nombre,        
+.formulario input #email,
+.formulario input #telefono,
+.formulario textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.formulario input #genero-otro {
+    margin-right: 10px;
+}
+
+.formulario button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color:#010B17;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.formulario button:hover {
+    background-color: #D6D7D7;
+}
+
+#captcha-container {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+#captcha-text {
+    padding: 10px;
+    background-color: #4CAF50;
+    color: #010B17;
+    margin-inline: 50px;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+#captcha-input {
+    padding: 5px;
+    border-radius: 5px;
+    margin-block: 10px ;
+    margin-right: 10px;
+}
+
+#refresh-captcha{
+    margin-inline: 100px ;
+}
+
+#mensaje{
+    margin-block: 10px ;
+}
+
+#mensaje {
+    margin-top: 10px;
+    font-size: 14px;
+}
+
+#form{
+    background-color:#010B17;
+    padding: 16px;
+}
+
+.contacto #btn-enviar  {
+    align-self: center;
+    margin-top: 20px; 
+    margin-left: 60px;
+}
+
+.numMedicos {
+    background-color: #4CAF50;
+    margin-block: 20px;
+    padding: 8px;
+    width: 100%;
+    border-radius: 5px;
+}
+
+.numMedicos h2 {
+    font-weight: bold;
+    text-align: center;
+    font-size: 16px;
+    color:black;
+    margin-bottom: 16px;
+}
+
+.numMedicos h3 {
+    font-size: 16px;
+    color: black;
+    margin-bottom: 16px;
+}
+
+.ubicacion {
+    background-color: white;
+    padding: 20px;
+    margin: 20px auto;
+    width: 100%;
+    border-radius: 5px;
+}
+
+/*.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-*/
+/*------------------------------------------------------------------MEDIA QUERY-----------------------------------------------------------------------*/
+/*.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-.-*/
+
+@media (min-width:700px){
+
+   
+    * {
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .contenedor {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "header header header"
+            "main main main"
+            "footer footer footer";
+    }
+
+    .main-index {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto auto auto;
+        grid-template-rows: auto auto auto auto;
+        grid-template-areas: 
+            "frase contenedorFotos contenedorFotos"
+            "frase contenedorFotos contenedorFotos"
+            "fotos-gym fotos-gym fotos-gym"
+            "nosotros nosotros nosotros";
+    }
+
+    .contenedorfotos {
+        grid-area: contenedorFotos;
+        display: grid;
+        grid-template-columns: auto auto;
+        grid-template-rows: auto auto auto;
+        grid-template-areas: 
+            "p p"
+            "couches2 couches3"
+            "couches1 couches4";
+    }
+
+    .header { grid-area: header; }
+
+    nav {
+        background: linear-gradient(to right, #010B17, green, yellowgreen, green, #010B17);
+    }
+
+    .btn_menu {
+        display: none;
+    }
+
+    ul.botonera {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .menu {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .botonera {
+        display: flex;
+        justify-content: end;
+        align-items: center;
+    }
+
+    .botonera li {
+        padding: 10px;
+        margin-inline: 24px;
+        background-color: #010B17;
+        border: solid #51E422;
+        text-decoration: none;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        color: #51E422;
+        border-radius: 24px;
+    }
+
+    nav ul li:hover {
+        background-color: #D6D7D7;
+    }
+
+    header {
+        grid-area: header;
+        background-color: #010B17;
+    }
+
+    nav {
+        padding: 20px;
+    }
+
+    .main { grid-area: main; }
+
+    .footer { grid-area: footer; }
+
+    .frase { 
+        grid-area: frase; 
+    }
+
+    .frase h4 {
+        padding-block: 48px;
+        padding-inline: 16px;
+        text-align: center;
+        font-size: 48px;
+    }
+
+    .contenedorFotos { grid-area: contenedorFotos; }
+
+    .fotos-gym { grid-area: fotos-gym; }
+
+    .nosotros { grid-area: nosotros; }
+
+    .p { grid-area: p; }
+
+    .couches1 { grid-area: couches1; }
+    .couches2 { grid-area: couches2; }
+    .couches3 { grid-area: couches3; }
+    .couches4 { grid-area: couches4; }
+
+  
+/*----------------------------------------------------------HTML Horarios y descuentos----------------------------------------------------------*/
+    .nuestrosHorarios{
+        grid-area: main;
+        width: 100%;
+    }
+
+    .nuestrosHorarios h2{
+    background-color:#D6D7D7;
+    padding-left: 20px;
+    }
+
+    .descuentos{
+    display: flex;
+    flex-direction: row;
+    margin: 2px;
+    border-top: 5px solid #010B17 ;
+    }
+
+    .descuentos .mediosPago,.gruposDescuento{
+    display: flex;
+    flex-direction: column;  
+    margin-block: 0;
+    margin-inline: 5%; 
+    }
+
+    .horarios{
+    background-color:#D6D7D7;
+    padding: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*-----------------------------------------------------------------HTML Salud------------------------------------------------------------------*/
+
+    .salud{
+        grid-area: main;
+        width: 100%;
+    }
+
+  
+    /* -----Ajustes para fotos-gym y cartel----- */
+    .fotos-gym {
+        grid-area: fotos-gym;
+        position: relative;
+        display: flex;
+        width: 100%;
+    }
+
+    .fotos-gym img {
+        width: 100%;
+        height: auto;
+        border-radius: 0%;
+    }
+
+    body .cartel {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        padding: 40px;
+        background-color: #010B17;
+        color: #51E422;
+        font-size: 24px;
+        text-align: center;
+        z-index: 1; 
+    }
+
+      
+
+/*----------------------------------------------HTML Actividades y horarios----------------------------------------------------------------*/
+
+
+
+        .especialistas{
+            display: flex;
+            flex-direction: column;
+        }
+
+        .especialistas .medicos{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .especialistas .medicos figure{
+            margin-block: 16px;
+            margin-inline: 32px;
+        }
+
+        .especialistas h1{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .formulario{
+            grid-area: main;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        .contacto{
+            width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #captcha-container{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+    
+  
+}
+
+
+
+
+
+
+
+
+
+
+    
+
+
